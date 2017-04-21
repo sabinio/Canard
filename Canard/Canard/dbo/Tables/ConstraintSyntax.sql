@@ -12,19 +12,9 @@
     [ShipRegion]     NVARCHAR (15) NULL,
     [ShipPostalCode] NVARCHAR (10) NULL,
     [ShipCountry]    NVARCHAR (15) NULL,
-    [ShippedBy]      NVARCHAR (64) NULL
-	,
-    CONSTRAINT [CK_Order_ShippedBy] CHECK (
-	[ShippedBy]IN (
-'Speedy  Express'
-,'Speedy  Package'
-,'Speedy  Shipping'
-,'United  Express'
-,'United  Package'
-,'United  Shipping'
-,'Federal  Express'
-,'Federal  Package'
-,'Federal  Shipping'
-	))
+    [ShippedBy]      NVARCHAR (64) NULL,
+    CONSTRAINT [CK_Order_ShippedBy] CHECK ([ShippedBy]='Federal  Shipping' OR [ShippedBy]='Federal  Package' OR [ShippedBy]='Federal  Express' OR [ShippedBy]='United  Shipping' OR [ShippedBy]='United  Package' OR [ShippedBy]='United  Express' OR [ShippedBy]='Speedy  Shipping' OR [ShippedBy]='Speedy  Package' OR [ShippedBy]='Speedy  Express')
 );
+
+
 
